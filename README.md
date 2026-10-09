@@ -1,6 +1,8 @@
-# FPGA Timing and FM Tuning Interface — Design Archive
+# FM Tuning Interface — Supporting Design Archive
 
-Design archive for FPGA timing, button control and an FM-frequency display interface.
+Supporting report and schematics for an FPGA FM-frequency selection interface.
+
+**Main project:** [FPGA_VHDL / Tuner_FM_FPGA](https://github.com/tedjelmoulksn-dotcom/FPGA_VHDL/tree/main/Tuner_FM_FPGA), which brings together the VHDL source, report and diagrams. This repository retains the supporting design archive under its historical `Minuterie_FPGA` name. The material concerns tuner-interface timing and display logic.
 
 ![State-machine design for the FM-frequency selection interface.](assets/machine_etats_stmp.png)
 
@@ -30,7 +32,7 @@ A sampled flip-flop chain should be distinguished from a fully specified mechani
 | [`assets/`](assets/) | Schematics, logic captures and supporting illustrations |
 | [Related VHDL sources](https://github.com/tedjelmoulksn-dotcom/FPGA_VHDL/tree/main/Tuner_FM_FPGA) | Tuner state-machine source and integration notes in the FPGA portfolio |
 
-This repository focuses on the design report and schematics. The linked VHDL portfolio provides the associated digital-control sources; the scope is frequency selection and display logic.
+This repository is the supporting archive, rather than a second independent implementation. It focuses on the design report and schematics. The linked VHDL portfolio provides the associated digital-control sources; the scope is frequency selection and display logic.
 
 ## Review workflow
 
@@ -50,3 +52,4 @@ The report explains the intended state transitions, while the schematic captures
 ## Licence
 
 No project-wide licence has been defined.
+
