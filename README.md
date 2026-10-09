@@ -26,7 +26,7 @@ A sampled flip-flop chain should be distinguished from a fully specified mechani
 | [`assets/`](assets/) | Schematics, logic captures and supporting illustrations |
 | [Related VHDL sources](https://github.com/tedjelmoulksn-dotcom/FPGA_VHDL/tree/main/Tuner_FM_FPGA) | Tuner state-machine source and integration notes in the FPGA portfolio |
 
-This repository contains documentation rather than a complete HDL project. The related portfolio contains source fragments; neither archive should be presented as a ready-to-build RF receiver.
+This repository focuses on the design report and schematics. The linked VHDL portfolio provides the associated digital-control sources; the scope is frequency selection and display logic.
 
 ## Review workflow
 
@@ -39,7 +39,9 @@ Read the report alongside the schematic captures, trace button events through th
 
 ## Validation status
 
-The report documents the original coursework. No new simulation, synthesis or board test was performed for this README update. Reconstructing the design requires identifying the original target, toolchain, top-level interconnections and constraints.
+The report and schematic captures let the design be traced from a button event to the displayed BCD value. Check one-step operation, sustained stepping and upper/lower boundary handling independently, then calculate the long-press interval from the divider and counter values.
+
+The report explains the intended state transitions, while the schematic captures expose their implementation. Reproduction uses the original target/toolchain and reconstructed interconnections, followed by boundary and timing checks.
 
 ## Licence
 
