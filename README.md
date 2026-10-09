@@ -1,6 +1,10 @@
 # FPGA Timing and FM Tuning Interface — Design Archive
 
-Documentation and schematic captures from a digital-electronics laboratory on counters, button conditioning and an FM-frequency tuning interface.
+Design archive for FPGA timing, button control and an FM-frequency display interface.
+
+![State-machine design for the FM-frequency selection interface.](assets/machine_etats_stmp.png)
+
+*State-machine design for the FM-frequency selection interface.*
 
 ## Design scope
 
