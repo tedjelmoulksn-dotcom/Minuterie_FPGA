@@ -1,20 +1,24 @@
-# FPGA FM Tuning Interface — Design Archive
+# FPGA FM Tuning Controller
 
-Supporting diagrams and report for an FPGA frequency-selection interface with BCD counting, multiplexed display and short/long button-press control.
+A VHDL study of an FM tuning interface, combining button handling, a control state machine, BCD counting and multiplexed display logic. The repository retains its historical name, `Minuterie_FPGA`; the supplied report and sources describe an FM tuner.
 
-![Project illustration](assets/machine_etats_stmp.png)
+## Architecture
+
+Up/down inputs drive the controller's increment, decrement and hold-repeat states. Supporting logic provides decimal counting, display selection and hexadecimal-to-seven-segment decoding. The laboratory specification describes a **87.5–108 MHz** tuning range in **0.1 MHz** steps.
 
 ## Repository guide
 
-| Location | Contents |
-|---|---|
-| [documentation/](documentation/) | Digital-electronics report |
-| [assets/](assets/) | State diagrams, schematics and code captures |
+| Path | Contents |
+| --- | --- |
+| [src/FWSTMP.vhd](src/FWSTMP.vhd) | Tuning controller state machine |
+| [src/tp0_prise_en_main_ise](src/tp0_prise_en_main_ise/) | Introductory design, schematics, testbenches and board constraints |
+| [src/tp1_affichage_multiplexe](src/tp1_affichage_multiplexe/) | Display multiplexer, decoder and clock-divider schematic |
+| [src/tp2_tuner_fm](src/tp2_tuner_fm/) | BCD counter, initialization logic and draft controller |
+| [documentation](documentation/) | Laboratory report |
+| [assets](assets/) | State diagram, debounce diagrams and implementation captures |
 
-## Getting started
+## Use
 
-For VHDL source and project files, see [FPGA_VHDL / Tuner_FM_FPGA](https://github.com/tedjelmoulksn-dotcom/FPGA_VHDL/tree/main/Tuner_FM_FPGA).
+Inspect the VHDL modules and testbenches with a compatible simulator. The original work uses Xilinx ISE project conventions; check the constraints and target device before attempting synthesis in another toolchain.
 
-## Project context
-
-The historical repository name is retained. Its documents concern the FM tuning interface rather than a separate general-purpose timer.
+The sources are exercise modules and variants, not a freshly verified complete bitstream. Repeat timing depends on the selected clock and divider. Historical ISE projects remain archived in [FPGA_VHDL](https://github.com/tedjelmoulksn-dotcom/FPGA_VHDL).
