@@ -2,6 +2,10 @@
 
 A VHDL study of an FM tuning interface, combining button handling, a control state machine, BCD counting and multiplexed display logic. The repository retains its historical name, `Minuterie_FPGA`; the supplied report and sources describe an FM tuner.
 
+![Minuterie FPGA project overview](assets/machine_etats_stmp.png)
+
+*Original state-machine diagram for the FM tuning-controller study. Diagram labels retain their original language.*
+
 ## Architecture
 
 Up/down inputs drive the controller's increment, decrement and hold-repeat states. Supporting logic provides decimal counting, display selection and hexadecimal-to-seven-segment decoding. The laboratory specification describes a **87.5–108 MHz** tuning range in **0.1 MHz** steps.
