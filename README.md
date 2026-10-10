@@ -1,55 +1,20 @@
-# FM Tuning Interface — Supporting Design Archive
+# FPGA FM Tuning Interface — Design Archive
 
-Supporting report and schematics for an FPGA FM-frequency selection interface.
+Supporting diagrams and report for an FPGA frequency-selection interface with BCD counting, multiplexed display and short/long button-press control.
 
-**Main project:** [FPGA_VHDL / Tuner_FM_FPGA](https://github.com/tedjelmoulksn-dotcom/FPGA_VHDL/tree/main/Tuner_FM_FPGA), which brings together the VHDL source, report and diagrams. This repository retains the supporting design archive under its historical `Minuterie_FPGA` name. The material concerns tuner-interface timing and display logic.
+![Project illustration](assets/machine_etats_stmp.png)
 
-![State-machine design for the FM-frequency selection interface.](assets/machine_etats_stmp.png)
+## Repository guide
 
-*State-machine design for the FM-frequency selection interface.*
-
-## Design scope
-
-The project explores a 87.5–108.0 MHz displayed tuning range with 0.1 MHz steps. Its control logic distinguishes short button presses from longer presses that trigger repeated increment or decrement; pressing both controls requests initialisation.
-
-The timing study describes a nominal two-second long-press threshold. Its realised duration depends on the clock divider and counter configuration.
-
-## Digital building blocks
-
-- BCD counting and frequency-bound detection.
-- Digit decoding and multiplexed seven-segment display.
-- Clock division and delay counting.
-- Multi-flip-flop button sampling and conditioning.
-- Finite-state control for increment, decrement and initialisation.
-
-A sampled flip-flop chain should be distinguished from a fully specified mechanical-switch debounce filter: synchronisation alone does not establish a debounce interval.
-
-## Available material
-
-| Location | Content |
+| Location | Contents |
 |---|---|
-| [`documentation/`](documentation/) | Working digital-electronics report |
-| [`assets/`](assets/) | Schematics, logic captures and supporting illustrations |
-| [Related VHDL sources](https://github.com/tedjelmoulksn-dotcom/FPGA_VHDL/tree/main/Tuner_FM_FPGA) | Tuner state-machine source and integration notes in the FPGA portfolio |
+| [documentation/](documentation/) | Digital-electronics report |
+| [assets/](assets/) | State diagrams, schematics and code captures |
 
-This repository is the supporting archive, rather than a second independent implementation. It focuses on the design report and schematics. The linked VHDL portfolio provides the associated digital-control sources; the scope is frequency selection and display logic.
+## Getting started
 
-## Review workflow
+For VHDL source and project files, see [FPGA_VHDL / Tuner_FM_FPGA](https://github.com/tedjelmoulksn-dotcom/FPGA_VHDL/tree/main/Tuner_FM_FPGA).
 
-```bash
-git clone https://github.com/tedjelmoulksn-dotcom/Minuterie_FPGA.git
-cd Minuterie_FPGA
-```
+## Project context
 
-Read the report alongside the schematic captures, trace button events through the state machine and verify divider-derived timing against the actual clock. Use the related VHDL repository for source inspection.
-
-## Validation status
-
-The report and schematic captures let the design be traced from a button event to the displayed BCD value. Check one-step operation, sustained stepping and upper/lower boundary handling independently, then calculate the long-press interval from the divider and counter values.
-
-The report explains the intended state transitions, while the schematic captures expose their implementation. Reproduction uses the original target/toolchain and reconstructed interconnections, followed by boundary and timing checks.
-
-## Licence
-
-No project-wide licence has been defined.
-
+The historical repository name is retained. Its documents concern the FM tuning interface rather than a separate general-purpose timer.
